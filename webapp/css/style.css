@@ -1,0 +1,6 @@
+/* Enter your custom styles here */
+/* Airline table header */
+.customTableHeader .sapMListTblHeaderCell {
+    background-color: rgb(204, 204, 206);
+}
+

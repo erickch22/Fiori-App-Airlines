@@ -1,0 +1,127 @@
+<mvc:View
+    controllerName="erick.app.airlines.eychapp.controller.Flights"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+>
+    <Page
+        navButtonPress="onNavBack"
+        showNavButton="true"
+        title="{Carrname}"
+        id="Flights"
+    >
+        <content>
+            <l:VerticalLayout id="verticalLayout">
+                <ObjectHeader
+                    id="objectHeader"
+                    title="{Carrname}"
+                    number=""
+                    numberUnit="{Currcode}"
+                    titleHref="{Url}"
+                >
+                    <attributes>
+                        <ObjectAttribute
+                            id="objectAttribute1"
+                            text="{Carrid}"
+                        />
+                        <ObjectAttribute
+                            id="objectAttribute2"
+                            text="{Url}"
+                        />
+                    </attributes>
+                </ObjectHeader>
+            </l:VerticalLayout>
+
+            <Table
+                id="idFlights"
+                items="{path: 'to_Flight', sorter: {path: 'Carrid'}}"
+            >
+                <headerToolbar>
+                    <Toolbar id="toolbar1">
+                        <Title
+                            id="title1"
+                            text="Flights"
+                            level="H2"
+                        />
+                    </Toolbar>
+                </headerToolbar>
+
+                <columns>
+                    <Column
+                        id="column1"
+                        minScreenWidth="Tablet"
+                    >
+                        <Text
+                            id="text1"
+                            text="{i18n>carriername}"
+                        />
+                    </Column>
+                    <Column id="column1.1">
+                        <Text
+                            id="text1.1"
+                            text="{i18n>flightId}"
+                        />
+                    </Column>
+                    <Column id="column2">
+                        <Text
+                            id="text2"
+                            text="{i18n>flightdate}"
+                        />
+                    </Column>
+                    <Column id="column3">
+                        <Text
+                            id="text3"
+                            text="{i18n>seatmax}"
+                        />
+                    </Column>
+                    <Column id="column4">
+                        <Text
+                            id="text4"
+                            text="{i18n>seatocc}"
+                        />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        class="sapUiHideOnPhone"
+                        id="column5"
+                    />
+                </columns>
+
+                <items>
+                    <ColumnListItem id="columnListItem1">
+                        <cells>
+                            <ObjectIdentifier
+                                class="sapUiHideOnPhone"
+                                id="objectIdentifier1"
+                                title="{Carrid}"
+                            />
+                            <Text
+                                id="text4.2"
+                                text="{Flid}"
+                            />
+                            <Text
+                                id="text5"
+                                text="{path: 'Fldate', type: 'sap.ui.model.type.Date'}"
+                            />
+                            <Text
+                                id="text6"
+                                text="{Seatsmax}"
+                            />
+                            <Text
+                                id="text7"
+                                text="{Seatsocc}"
+                            />
+                            <Button
+                                class="sapUiHideOnPhone"
+                                text="View Detail"
+                                icon="sap-icon://display"
+                                press="onDetailView"
+                            />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

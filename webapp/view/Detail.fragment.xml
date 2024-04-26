@@ -1,0 +1,50 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog
+        icon="sap-icon://travel-itinerary"
+        id="detailFragment"
+        title="{i18n>titleDetails}"
+    >
+        <Table
+            id="detailTable"
+            items="{ path: 'FilteredConnectionModel>/', sorter: { path: 'Cityfrom' } }"
+        >
+            <columns>
+                <Column>
+                    <Text text="{i18n>airline}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>cityfrom}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>cityto}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>AirportFrom}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>AirportTo}" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{FilteredConnectionModel>Carrid}" />
+                        <Text text="{FilteredConnectionModel>Cityfrom}" />
+                        <Text text="{FilteredConnectionModel>Cityto}" />
+                        <Text text="{FilteredConnectionModel>Airpfrom}" />
+                        <Text text="{FilteredConnectionModel>Airpto}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+        <beginButton>
+            <Button
+                text="close"
+                press="onCloseDetail"
+            />
+        </beginButton>
+    </Dialog>
+</core:FragmentDefinition>
